@@ -1,14 +1,13 @@
 Flask==1.1.1
-scipy>=0.15.1
-pandas>=0.19
 xgboost==0.90
 Jinja2==2.10.1
 scikit-learn>=0.18
+scipy>=0.15.1
+pandas>=0.19
 matplotlib>=1.4.3
 gunicorn==19.9.0Werkzeug==0.15.5
 itsdangerous==1.1.0
 MarkupSafe==1.1.1
 numpy>=1.9.2
-
 
 
