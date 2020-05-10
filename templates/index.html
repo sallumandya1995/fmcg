@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html >
+<head>
+  <meta charset="UTF-8">
+  <title>ML API</title>
+  <link href='https://fonts.googleapis.com/css?family=Pacifico' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Arimo' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Hind:300' rel='stylesheet' type='text/css'>
+<link href='https://fonts.googleapis.com/css?family=Open+Sans+Condensed:300' rel='stylesheet' type='text/css'>
+<link rel="stylesheet" type= "text/css" href="{{ url_for('static', filename='style.css') }}">
+ 
+
+
+<style type="text/css">
+html { width: 100%; height:100%; overflow:hidden; }
+
+body { 
+  width: 100%;
+  height:100%;
+  font-family: 'Fantasy';
+  background: lightgreen;
+  color: #fff;
+  font-size: 24px;
+  text-align:center;
+  letter-spacing:1.4px;
+
+}
+.login { 
+  position: absolute;
+  top: 40%;
+  left: 50%;
+  margin: -150px 0 0 -150px;
+  width:400px;
+  height:400px;
+}
+
+.login h1 { color: #fff; text-shadow: 0 0 10px rgba(0,0,0,0.3); letter-spacing:1px; text-align:center; }
+
+input { 
+  width: 10%; 
+  margin-bottom: 10px; 
+  background: rgba(0,0,0,0.3);
+  border: none;
+  outline: none;
+  padding: 10px;
+  font-size: 13px;
+  color: #fff;
+  text-shadow: 1px 1px 1px rgba(0,0,0,0.3);
+  border: 1px solid rgba(0,0,0,0.3);
+  border-radius: 4px;
+  box-shadow: inset 0 -5px 45px rgba(100,100,100,0.2), 0 1px 1px rgba(255,255,255,0.2);
+  -webkit-transition: box-shadow .5s ease;
+  -moz-transition: box-shadow .5s ease;
+  -o-transition: box-shadow .5s ease;
+  -ms-transition: box-shadow .5s ease;
+  transition: box-shadow .5s ease;
+}
+</style>
+</head>
+
+<body>
+  <h1 > Prediction of  FMCG sales of salesman for achievement  </h1>
+
+     <!-- Main Input For Receiving Query to our ML -->
+       <form action="{{ url_for('predict')}}"method="post">
+                <input type="text" name="SLSMAN_CD" placeholder="code of salesman" required="required" />
+                      <input type="text" name="PROD_CD " placeholder="product id" required="required" />
+                    <input type="text" name="PLAN_MONTH" placeholder="month" required="required" />
+        <input type="text" name="TARGET_IN_EA" placeholder="target for sale " required="required" />
+        
+        <button type="submit" class="btn btn-primary btn-block btn-large">Predict</button>
+    </form>
+   <br>
+   <br>
+   {{ prediction_text }}
+
+ </div>
+
+
+</body>
+</html>
